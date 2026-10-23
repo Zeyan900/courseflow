@@ -205,10 +205,18 @@ export function matchPolicy(query: string, policies: PolicyEntry[]): MatchResult
     }
   }
 
+  let matchLabel: 'Exact Document Match' | 'Direct Procedural Match' | 'Source-Grounded Match' = 'Source-Grounded Match';
+  if (topMatch.exactPhraseMatch || topMatch.score >= 0.9) {
+    matchLabel = 'Exact Document Match';
+  } else if (topMatch.score >= 0.55) {
+    matchLabel = 'Direct Procedural Match';
+  }
+
   return {
     status: 'matched',
     bestMatch: topMatch.policy,
     score: topMatch.score,
+    matchLabel,
     matchedKeywords: topMatch.matchedKeywords
   };
 }

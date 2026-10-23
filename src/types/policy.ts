@@ -44,10 +44,13 @@ export interface ScoredPolicyMatch {
   exactPhraseMatch: boolean;
 }
 
+export type MatchLabel = 'Exact Document Match' | 'Direct Procedural Match' | 'Source-Grounded Match';
+
 export interface MatchResult {
   status: 'matched' | 'no_match' | 'ambiguous';
   bestMatch?: PolicyEntry;
   score?: number;
+  matchLabel?: MatchLabel;
   matchedKeywords?: string[];
   candidates?: PolicyEntry[]; // For ambiguous matches requiring user clarification
   refusalReason?: string;

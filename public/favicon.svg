@@ -1,7 +1,15 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="none">
-  <rect width="32" height="32" rx="8" fill="#0A0A08"/>
-  <rect x="1" y="1" width="30" height="30" rx="7" stroke="#343434" stroke-width="1"/>
-  <path d="M8 12C8 9.79086 9.79086 8 12 8H20C22.2091 8 24 9.79086 24 12V20C24 22.2091 22.2091 24 20 24H12C9.79086 24 8 22.2091 8 20V12Z" fill="#0D4C3C"/>
-  <path d="M12 16L15 19L20 13" stroke="#7AA05A" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
-  <circle cx="21" cy="11" r="2" fill="#A55BFF"/>
+<svg width="32" height="32" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="cf-fav-stream" x1="4" y1="4" x2="32" y2="32" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stopColor="#0D4C3C" />
+      <stop offset="60%" stopColor="#12624C" />
+      <stop offset="100%" stopColor="#7AA05A" />
+    </linearGradient>
+  </defs>
+  <rect width="36" height="36" rx="9" fill="#0A0A08" stroke="#30302D" stroke-width="1.2" />
+  <path d="M9 25C9 17.5 13.5 11 20 11C23.5 11 26 12.8 27.5 15" stroke="url(#cf-fav-stream)" stroke-width="3.4" stroke-linecap="round" />
+  <path d="M27 11C27 18.5 22.5 25 16 25C13 25 10.5 23.8 9 22" stroke="url(#cf-fav-stream)" stroke-width="3.4" stroke-linecap="round" stroke-opacity="0.45" />
+  <path d="M13 18.5L18 23.5L25 14" stroke="#F8F6F0" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" />
+  <circle cx="26" cy="10" r="2.8" fill="#A55BFF" />
+  <circle cx="26" cy="10" r="1.5" fill="#F8F6F0" />
 </svg>

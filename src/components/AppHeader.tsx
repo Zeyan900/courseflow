@@ -1,4 +1,5 @@
 import React from 'react';
+import { CourseFlowLogo } from './CourseFlowLogo';
 
 interface AppHeaderProps {
   onResetAll?: () => void;
@@ -11,11 +12,7 @@ export const AppHeader: React.FC<AppHeaderProps> = ({ onResetAll, hasStoredData 
       <div className="cf-container cf-header-inner">
         <div className="cf-brand-group">
           <div className="cf-logo-mark" aria-hidden="true">
-            <svg width="28" height="28" viewBox="0 0 32 32" fill="none">
-              <rect width="32" height="32" rx="8" fill="#0D4C3C" />
-              <path d="M9 16L14 21L23 11" stroke="#F4F1EB" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round"/>
-              <circle cx="23" cy="9" r="2.5" fill="#A55BFF"/>
-            </svg>
+            <CourseFlowLogo size={34} />
           </div>
           <div>
             <div className="cf-brand-title-row">

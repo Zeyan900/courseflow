@@ -5,6 +5,7 @@ interface MatchStatusProps {
   status: MatchStatusType;
   query: string;
   score?: number;
+  matchLabel?: string;
   matchedKeywords?: string[];
   candidates?: PolicyEntry[];
   refusalReason?: string;
@@ -15,7 +16,7 @@ interface MatchStatusProps {
 export const MatchStatus: React.FC<MatchStatusProps> = ({
   status,
   query,
-  score,
+  matchLabel,
   matchedKeywords = [],
   candidates = [],
   refusalReason,
@@ -140,12 +141,13 @@ export const MatchStatus: React.FC<MatchStatusProps> = ({
                 <polyline points="20 6 9 17 4 12" />
               </svg>
             </span>
-            <span className="cf-match-title">Official Verification Match</span>
-            {score !== undefined && (
-              <span className="cf-badge cf-badge-emerald" title="Deterministic match confidence score">
-                {Math.round(score * 100)}% Match
-              </span>
-            )}
+            <span className="cf-match-title">Official Policy Grounded</span>
+            <span className="cf-badge cf-badge-emerald" title="Deterministic match classification">
+              {matchLabel || "Direct Procedural Match"}
+            </span>
+            <span className="cf-badge cf-badge-muted" title="Official Registrar Source Verification">
+              Registrar Verified
+            </span>
           </div>
 
           {matchedKeywords.length > 0 && (

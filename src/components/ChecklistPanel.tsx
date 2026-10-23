@@ -26,7 +26,7 @@ export const ChecklistPanel: React.FC<ChecklistPanelProps> = ({
       <div className="cf-panel-header">
         <div className="cf-panel-title-group">
           <span className="cf-panel-icon cf-icon-moss" aria-hidden="true">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
               <path d="M9 11l3 3L22 4"/>
               <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/>
             </svg>
@@ -35,7 +35,7 @@ export const ChecklistPanel: React.FC<ChecklistPanelProps> = ({
             <h2 id="checklist-heading" className="cf-panel-title">
               Action Checklist
             </h2>
-            <p className="cf-panel-subtitle">Official verified steps to complete this process</p>
+            <p className="cf-panel-subtitle">Official verified procedural sequence</p>
           </div>
         </div>
 
@@ -77,7 +77,7 @@ export const ChecklistPanel: React.FC<ChecklistPanelProps> = ({
                   aria-hidden="true"
                 >
                   {isChecked && (
-                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3.5" strokeLinecap="round" strokeLinejoin="round">
+                    <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3.5" strokeLinecap="round" strokeLinejoin="round">
                       <polyline points="20 6 9 17 4 12"/>
                     </svg>
                   )}
@@ -86,19 +86,21 @@ export const ChecklistPanel: React.FC<ChecklistPanelProps> = ({
 
               <div className="cf-step-content">
                 <label htmlFor={`step-chk-${step.id}`} className="cf-step-label">
-                  <span className="cf-step-number">{stepNumber}.</span>
+                  <span className="cf-step-number-badge">{stepNumber}</span>
                   <span className="cf-step-text">{step.text}</span>
                 </label>
 
                 {step.hint && (
-                  <p id={`step-hint-${step.id}`} className="cf-step-hint">
-                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-                      <circle cx="12" cy="12" r="10"/>
-                      <line x1="12" y1="16" x2="12" y2="12"/>
-                      <line x1="12" y1="8" x2="12.01" y2="8"/>
-                    </svg>
-                    <span>{step.hint}</span>
-                  </p>
+                  <div id={`step-hint-${step.id}`} className="cf-step-hint-box">
+                    <span className="cf-step-hint-icon" aria-hidden="true">
+                      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
+                        <circle cx="12" cy="12" r="10"/>
+                        <line x1="12" y1="16" x2="12" y2="12"/>
+                        <line x1="12" y1="8" x2="12.01" y2="8"/>
+                      </svg>
+                    </span>
+                    <span className="cf-step-hint-text">{step.hint}</span>
+                  </div>
                 )}
               </div>
             </div>
@@ -111,8 +113,8 @@ export const ChecklistPanel: React.FC<ChecklistPanelProps> = ({
           <span className="cf-status-dot" aria-hidden="true"></span>
           <span>
             {isStorageActive
-              ? 'Progress persists automatically in your local browser profile'
-              : 'Storage is currently disabled in this browser session'}
+              ? 'Checklist state persists locally in browser localStorage'
+              : 'Local storage unavailable in this session'}
           </span>
         </div>
       </div>

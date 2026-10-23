@@ -1,55 +1,63 @@
 /**
  * CourseFlow UI/UX Design System Tokens
- * Source: CourseFlow UI/UX Design System (v1.0)
+ * Source: CourseFlow UI/UX Design System (v1.0) - Refined
  * Visual direction: Premium dark · Editorial · Emerald-led · Warm neutral surfaces · Restrained violet accents · Evidence-first
  */
 
 :root {
-  /* Color Palette */
+  /* Color Palette - Refined depth & contrast */
   --cf-bg: #0A0A08;
-  --cf-surface: #171715;
-  --cf-surface-raised: #222222;
-  --cf-surface-elevated: #282826;
-  --cf-border: #343434;
-  --cf-border-hover: #484848;
-  --cf-border-focus: #5a5a58;
+  --cf-surface: #151513;
+  --cf-surface-raised: #1E1E1C;
+  --cf-surface-elevated: #272724;
+  --cf-surface-hover: #2D2D2A;
+  
+  --cf-border: #30302D;
+  --cf-border-subtle: rgba(244, 241, 235, 0.08);
+  --cf-border-hover: #484844;
+  --cf-border-focus: #62625D;
 
-  /* Typography Colors */
-  --cf-text-primary: #F4F1EB;      /* Warm Ivory */
-  --cf-text-secondary: #B7B5B0;    /* Warm Muted Grey */
-  --cf-text-muted: #92918E;        /* Metadata Grey */
-  --cf-text-dim: #686765;
+  /* Typography Colors - High readability & WCAG 2.2 AA compliant */
+  --cf-text-primary: #F8F6F0;      /* Crisp Warm Ivory */
+  --cf-text-secondary: #C8C5BC;    /* High-contrast readable body */
+  --cf-text-muted: #9C9A94;        /* Accessible metadata grey (> 4.8:1 contrast) */
+  --cf-text-dim: #74726C;
 
-  /* Brand Accents */
+  /* Brand Accents - Emerald-led */
   --cf-primary: #0D4C3C;           /* Dark Emerald */
   --cf-primary-hover: #12624C;     /* Hover Emerald */
-  --cf-primary-active: #09372B;
+  --cf-primary-active: #0A3A2E;
   --cf-primary-subtle: rgba(13, 76, 60, 0.22);
-  --cf-primary-border: rgba(18, 98, 76, 0.45);
+  --cf-primary-border: rgba(18, 98, 76, 0.5);
 
-  /* Progress & Status */
+  /* Progress & Status - Moss Green */
   --cf-progress: #7AA05A;          /* Moss Green */
   --cf-progress-hover: #8db568;
-  --cf-progress-subtle: rgba(122, 160, 90, 0.15);
+  --cf-progress-subtle: rgba(122, 160, 90, 0.16);
+  --cf-progress-border: rgba(122, 160, 90, 0.4);
   --cf-success: #7AA05A;
   
-  /* Restrained Violet (Focus & Decorative Details Only) */
+  /* Restrained Violet (Focus & Decorative Waypoints Only) */
   --cf-violet: #A55BFF;
-  --cf-violet-subtle: rgba(165, 91, 255, 0.12);
-  --cf-violet-glow: 0 0 16px rgba(165, 91, 255, 0.2);
+  --cf-violet-subtle: rgba(165, 91, 255, 0.14);
+  --cf-violet-glow: 0 0 16px rgba(165, 91, 255, 0.25);
 
   /* Feedback Colors */
   --cf-warning: #F0C36A;
   --cf-warning-bg: rgba(240, 195, 106, 0.12);
-  --cf-warning-border: rgba(240, 195, 106, 0.3);
+  --cf-warning-border: rgba(240, 195, 106, 0.35);
 
   --cf-error: #FF8585;
   --cf-error-bg: rgba(255, 133, 133, 0.12);
-  --cf-error-border: rgba(255, 133, 133, 0.3);
+  --cf-error-border: rgba(255, 133, 133, 0.35);
 
   --cf-info: #8FC9FF;
   --cf-info-bg: rgba(143, 201, 255, 0.12);
-  --cf-info-border: rgba(143, 201, 255, 0.3);
+  --cf-info-border: rgba(143, 201, 255, 0.35);
+
+  /* Skeleton Loading Colors */
+  --cf-skeleton-base: #1C1C1A;
+  --cf-skeleton-shimmer: #282825;
 
   /* Typography Families with System Fallbacks */
   --cf-font-heading: 'Syne', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
@@ -75,13 +83,14 @@
   --cf-radius-xl: 24px;
   --cf-radius-full: 9999px;
 
-  /* Transitions */
+  /* Transitions & Motion */
   --cf-duration-fast: 140ms;
   --cf-duration-normal: 220ms;
   --cf-ease-default: cubic-bezier(0.16, 1, 0.3, 1);
 
   /* Shadows */
-  --cf-shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.3);
-  --cf-shadow-md: 0 4px 12px rgba(0, 0, 0, 0.4);
-  --cf-shadow-lg: 0 12px 32px rgba(0, 0, 0, 0.55);
+  --cf-shadow-sm: 0 2px 6px rgba(0, 0, 0, 0.35);
+  --cf-shadow-md: 0 6px 18px rgba(0, 0, 0, 0.45);
+  --cf-shadow-lg: 0 16px 40px rgba(0, 0, 0, 0.6);
+  --cf-shadow-card: 0 1px 1px rgba(0, 0, 0, 0.2), 0 4px 14px rgba(0, 0, 0, 0.4);
 }

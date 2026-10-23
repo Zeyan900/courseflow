@@ -4,6 +4,7 @@ import { QuestionComposer } from './components/QuestionComposer';
 import { MatchStatus } from './components/MatchStatus';
 import { EvidencePanel } from './components/EvidencePanel';
 import { ChecklistPanel } from './components/ChecklistPanel';
+import { ResultsSkeleton } from './components/ResultsSkeleton';
 import { DisclosureFooter } from './components/DisclosureFooter';
 
 import { PolicyEntry, MatchStatus as MatchStatusType } from './types/policy';
@@ -26,6 +27,7 @@ export const App: React.FC = () => {
   const [status, setStatus] = useState<MatchStatusType>('idle');
   const [activePolicy, setActivePolicy] = useState<PolicyEntry | null>(null);
   const [matchScore, setMatchScore] = useState<number | undefined>(undefined);
+  const [matchLabel, setMatchLabel] = useState<string | undefined>(undefined);
   const [matchedKeywords, setMatchedKeywords] = useState<string[]>([]);
   const [candidates, setCandidates] = useState<PolicyEntry[]>([]);
   const [refusalReason, setRefusalReason] = useState<string | undefined>(undefined);
@@ -57,19 +59,20 @@ export const App: React.FC = () => {
     }
   }, []);
 
-  // Execute policy search
+  // Execute policy search without artificial loading delays
   const handleSearch = useCallback((userQuery: string) => {
     setQuery(userQuery);
     setStatus('searching');
 
-    // Slight micro-delay (~150ms) to ensure accessibility aria-live announcer registers transition
-    setTimeout(() => {
+    // Use requestAnimationFrame for immediate paint of searching state without artificial delay
+    requestAnimationFrame(() => {
       try {
         const result = matchPolicy(userQuery, policies);
 
         if (result.status === 'matched' && result.bestMatch) {
           setActivePolicy(result.bestMatch);
           setMatchScore(result.score);
+          setMatchLabel(result.matchLabel);
           setMatchedKeywords(result.matchedKeywords || []);
           setCandidates([]);
           setRefusalReason(undefined);
@@ -84,12 +87,14 @@ export const App: React.FC = () => {
         } else if (result.status === 'ambiguous') {
           setActivePolicy(null);
           setMatchScore(result.score);
+          setMatchLabel(undefined);
           setCandidates(result.candidates || []);
           setRefusalReason(result.refusalReason);
           setStatus('ambiguous');
         } else {
           setActivePolicy(null);
           setMatchScore(result.score);
+          setMatchLabel(undefined);
           setCandidates([]);
           setRefusalReason(result.refusalReason);
           setStatus('no_match');
@@ -99,13 +104,14 @@ export const App: React.FC = () => {
         setStatus('error');
         setRefusalReason('An unexpected error occurred while parsing local policy data.');
       }
-    }, 140);
+    });
   }, [policies]);
 
   // Handle selection of a candidate when query is ambiguous
   const handleSelectCandidate = useCallback((candidate: PolicyEntry) => {
     setActivePolicy(candidate);
     setMatchScore(1.0);
+    setMatchLabel('Direct Procedural Match');
     setMatchedKeywords(candidate.keywords.slice(0, 4));
     setCandidates([]);
     setStatus('matched');
@@ -168,6 +174,7 @@ export const App: React.FC = () => {
             status={status}
             query={query}
             score={matchScore}
+            matchLabel={matchLabel}
             matchedKeywords={matchedKeywords}
             candidates={candidates}
             refusalReason={refusalReason}
@@ -175,8 +182,12 @@ export const App: React.FC = () => {
             onTryExample={handleSearch}
           />
 
+          {status === 'searching' && (
+            <ResultsSkeleton />
+          )}
+
           {status === 'matched' && activePolicy && (
-            <div className="cf-results-grid">
+            <div className="cf-results-grid cf-results-animated">
               <EvidencePanel policy={activePolicy} />
               
               <ChecklistPanel

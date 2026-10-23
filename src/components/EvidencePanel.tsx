@@ -10,8 +10,8 @@ export const EvidencePanel: React.FC<EvidencePanelProps> = ({ policy }) => {
     <article className="cf-evidence-panel cf-panel" aria-labelledby="evidence-heading">
       <div className="cf-panel-header">
         <div className="cf-panel-title-group">
-          <span className="cf-panel-icon" aria-hidden="true">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+          <span className="cf-panel-icon cf-icon-emerald" aria-hidden="true">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
               <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/>
               <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/>
             </svg>
@@ -20,12 +20,12 @@ export const EvidencePanel: React.FC<EvidencePanelProps> = ({ policy }) => {
             <h2 id="evidence-heading" className="cf-panel-title">
               Official Source Evidence
             </h2>
-            <p className="cf-panel-subtitle">Verbatim regulatory text cited for this procedure</p>
+            <p className="cf-panel-subtitle">Verbatim regulatory text cited directly for this procedure</p>
           </div>
         </div>
 
         <div className="cf-evidence-badges">
-          <span className="cf-badge cf-badge-emerald" title="Institution issuing this document">
+          <span className="cf-badge cf-badge-emerald" title="Issuing university">
             {policy.institution}
           </span>
         </div>
@@ -46,7 +46,7 @@ export const EvidencePanel: React.FC<EvidencePanelProps> = ({ policy }) => {
 
         <div className="cf-meta-row">
           <span className="cf-meta-label">Verified date:</span>
-          <span className="cf-meta-value cf-font-mono">
+          <span className="cf-meta-value cf-font-mono cf-date-value">
             {policy.lastChecked ? policy.lastChecked : 'Date not recorded'}
           </span>
         </div>
@@ -73,24 +73,29 @@ export const EvidencePanel: React.FC<EvidencePanelProps> = ({ policy }) => {
 
       <div className="cf-excerpt-container">
         <div className="cf-excerpt-header">
-          <span className="cf-excerpt-label">Exact official excerpt:</span>
-          <span className="cf-badge cf-badge-muted">Unmodified text</span>
+          <div className="cf-excerpt-header-left">
+            <span className="cf-excerpt-quote-icon" aria-hidden="true">&ldquo;</span>
+            <span className="cf-excerpt-label">Verbatim Institutional Excerpt</span>
+          </div>
+          <span className="cf-badge cf-badge-muted">Unmodified Public Record</span>
         </div>
 
         <blockquote className="cf-excerpt-quote">
           <p className="cf-excerpt-text">
-            “{policy.excerpt}”
+            {policy.excerpt}
           </p>
         </blockquote>
 
-        <p className="cf-excerpt-caveat">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-            <circle cx="12" cy="12" r="10"/>
-            <line x1="12" y1="16" x2="12" y2="12"/>
-            <line x1="12" y1="8" x2="12.01" y2="8"/>
-          </svg>
-          <span>All action steps in the adjacent checklist are backed directly by this verified excerpt.</span>
-        </p>
+        <div className="cf-excerpt-provenance">
+          <div className="cf-excerpt-caveat">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+              <circle cx="12" cy="12" r="10"/>
+              <line x1="12" y1="16" x2="12" y2="12"/>
+              <line x1="12" y1="8" x2="12.01" y2="8"/>
+            </svg>
+            <span>All procedural tasks in the action checklist are backed directly by this verified passage. No external interpretations or deadlines have been inferred.</span>
+          </div>
+        </div>
       </div>
     </article>
   );
