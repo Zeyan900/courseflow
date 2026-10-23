@@ -1,0 +1,87 @@
+/**
+ * CourseFlow UI/UX Design System Tokens
+ * Source: CourseFlow UI/UX Design System (v1.0)
+ * Visual direction: Premium dark · Editorial · Emerald-led · Warm neutral surfaces · Restrained violet accents · Evidence-first
+ */
+
+:root {
+  /* Color Palette */
+  --cf-bg: #0A0A08;
+  --cf-surface: #171715;
+  --cf-surface-raised: #222222;
+  --cf-surface-elevated: #282826;
+  --cf-border: #343434;
+  --cf-border-hover: #484848;
+  --cf-border-focus: #5a5a58;
+
+  /* Typography Colors */
+  --cf-text-primary: #F4F1EB;      /* Warm Ivory */
+  --cf-text-secondary: #B7B5B0;    /* Warm Muted Grey */
+  --cf-text-muted: #92918E;        /* Metadata Grey */
+  --cf-text-dim: #686765;
+
+  /* Brand Accents */
+  --cf-primary: #0D4C3C;           /* Dark Emerald */
+  --cf-primary-hover: #12624C;     /* Hover Emerald */
+  --cf-primary-active: #09372B;
+  --cf-primary-subtle: rgba(13, 76, 60, 0.22);
+  --cf-primary-border: rgba(18, 98, 76, 0.45);
+
+  /* Progress & Status */
+  --cf-progress: #7AA05A;          /* Moss Green */
+  --cf-progress-hover: #8db568;
+  --cf-progress-subtle: rgba(122, 160, 90, 0.15);
+  --cf-success: #7AA05A;
+  
+  /* Restrained Violet (Focus & Decorative Details Only) */
+  --cf-violet: #A55BFF;
+  --cf-violet-subtle: rgba(165, 91, 255, 0.12);
+  --cf-violet-glow: 0 0 16px rgba(165, 91, 255, 0.2);
+
+  /* Feedback Colors */
+  --cf-warning: #F0C36A;
+  --cf-warning-bg: rgba(240, 195, 106, 0.12);
+  --cf-warning-border: rgba(240, 195, 106, 0.3);
+
+  --cf-error: #FF8585;
+  --cf-error-bg: rgba(255, 133, 133, 0.12);
+  --cf-error-border: rgba(255, 133, 133, 0.3);
+
+  --cf-info: #8FC9FF;
+  --cf-info-bg: rgba(143, 201, 255, 0.12);
+  --cf-info-border: rgba(143, 201, 255, 0.3);
+
+  /* Typography Families with System Fallbacks */
+  --cf-font-heading: 'Syne', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  --cf-font-body: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  --cf-font-mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+
+  /* Spacing Scale (4px base) */
+  --cf-space-1: 4px;
+  --cf-space-2: 8px;
+  --cf-space-3: 12px;
+  --cf-space-4: 16px;
+  --cf-space-5: 20px;
+  --cf-space-6: 24px;
+  --cf-space-8: 32px;
+  --cf-space-10: 40px;
+  --cf-space-12: 48px;
+  --cf-space-16: 64px;
+
+  /* Border Radii */
+  --cf-radius-sm: 8px;
+  --cf-radius-md: 12px;
+  --cf-radius-lg: 18px;
+  --cf-radius-xl: 24px;
+  --cf-radius-full: 9999px;
+
+  /* Transitions */
+  --cf-duration-fast: 140ms;
+  --cf-duration-normal: 220ms;
+  --cf-ease-default: cubic-bezier(0.16, 1, 0.3, 1);
+
+  /* Shadows */
+  --cf-shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.3);
+  --cf-shadow-md: 0 4px 12px rgba(0, 0, 0, 0.4);
+  --cf-shadow-lg: 0 12px 32px rgba(0, 0, 0, 0.55);
+}

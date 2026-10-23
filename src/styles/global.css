@@ -1,0 +1,274 @@
+@import './tokens.css';
+
+/* Global Reset & Base */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  color-scheme: dark;
+  background-color: var(--cf-bg);
+  color: var(--cf-text-primary);
+  font-family: var(--cf-font-body);
+  font-size: 16px;
+  line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  min-height: 100vh;
+  min-width: 320px;
+  background-color: var(--cf-bg);
+  color: var(--cf-text-primary);
+  display: flex;
+  flex-direction: column;
+}
+
+#root {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Typography Hierarchy */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--cf-font-heading);
+  color: var(--cf-text-primary);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+}
+
+p {
+  color: var(--cf-text-secondary);
+}
+
+a {
+  color: var(--cf-progress);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  transition: color var(--cf-duration-fast) var(--cf-ease-default);
+}
+
+a:hover {
+  color: var(--cf-text-primary);
+}
+
+/* Universal Keyboard Focus State */
+:where(button, input, textarea, a, select, [tabindex]):focus-visible {
+  outline: 2px solid var(--cf-violet);
+  outline-offset: 3px;
+}
+
+/* Common Layout Container */
+.cf-container {
+  width: min(100% - 32px, 1120px);
+  margin-inline: auto;
+}
+
+/* Panels & Surfaces */
+.cf-panel {
+  background-color: var(--cf-surface);
+  border: 1px solid var(--cf-border);
+  border-radius: var(--cf-radius-lg);
+  padding: var(--cf-space-6);
+  box-shadow: var(--cf-shadow-sm);
+  transition: border-color var(--cf-duration-fast) ease, box-shadow var(--cf-duration-fast) ease;
+}
+
+.cf-panel-raised {
+  background-color: var(--cf-surface-raised);
+  border: 1px solid var(--cf-border);
+  border-radius: var(--cf-radius-md);
+  padding: var(--cf-space-4);
+}
+
+/* Results Grid */
+.cf-results-grid {
+  display: grid;
+  gap: var(--cf-space-6);
+  align-items: start;
+}
+
+@media (min-width: 900px) {
+  .cf-results-grid {
+    grid-template-columns: minmax(0, 1.15fr) minmax(320px, 0.85fr);
+  }
+}
+
+@media (max-width: 899px) {
+  .cf-results-grid {
+    grid-template-columns: 1fr;
+    gap: var(--cf-space-5);
+  }
+  
+  .cf-panel {
+    padding: var(--cf-space-4);
+  }
+}
+
+/* Form Controls */
+.cf-input {
+  width: 100%;
+  min-height: 48px;
+  padding: var(--cf-space-3) var(--cf-space-4);
+  border: 1px solid var(--cf-border);
+  border-radius: var(--cf-radius-md);
+  background-color: var(--cf-surface-raised);
+  color: var(--cf-text-primary);
+  font-family: var(--cf-font-body);
+  font-size: 1rem;
+  transition: border-color var(--cf-duration-fast) ease, box-shadow var(--cf-duration-fast) ease;
+}
+
+.cf-input:hover {
+  border-color: var(--cf-border-hover);
+}
+
+.cf-input:focus {
+  border-color: var(--cf-border-focus);
+}
+
+.cf-input::placeholder {
+  color: var(--cf-text-muted);
+}
+
+/* Primary Button (Dark Emerald) */
+.cf-btn-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--cf-space-2);
+  min-height: 48px;
+  padding: 0 var(--cf-space-5);
+  border: 1px solid var(--cf-primary-border);
+  border-radius: var(--cf-radius-md);
+  background-color: var(--cf-primary);
+  color: var(--cf-text-primary);
+  font-family: var(--cf-font-body);
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: background-color var(--cf-duration-fast) ease, border-color var(--cf-duration-fast) ease, transform 100ms ease;
+}
+
+.cf-btn-primary:hover:not(:disabled) {
+  background-color: var(--cf-primary-hover);
+  border-color: rgba(18, 98, 76, 0.8);
+}
+
+.cf-btn-primary:active:not(:disabled) {
+  background-color: var(--cf-primary-active);
+  transform: translateY(1px);
+}
+
+.cf-btn-primary:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* Secondary Button */
+.cf-btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--cf-space-2);
+  min-height: 40px;
+  padding: 0 var(--cf-space-4);
+  border: 1px solid var(--cf-border);
+  border-radius: var(--cf-radius-md);
+  background-color: var(--cf-surface-raised);
+  color: var(--cf-text-secondary);
+  font-family: var(--cf-font-body);
+  font-size: 0.875rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all var(--cf-duration-fast) ease;
+}
+
+.cf-btn-secondary:hover:not(:disabled) {
+  background-color: var(--cf-surface-elevated);
+  border-color: var(--cf-border-hover);
+  color: var(--cf-text-primary);
+}
+
+.cf-btn-ghost {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--cf-space-2);
+  padding: var(--cf-space-2) var(--cf-space-3);
+  background: transparent;
+  border: none;
+  border-radius: var(--cf-radius-sm);
+  color: var(--cf-text-muted);
+  font-family: var(--cf-font-body);
+  font-size: 0.825rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: color var(--cf-duration-fast) ease, background-color var(--cf-duration-fast) ease;
+}
+
+.cf-btn-ghost:hover {
+  color: var(--cf-text-primary);
+  background-color: var(--cf-surface-raised);
+}
+
+/* Badges and Chips */
+.cf-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 3px 10px;
+  border-radius: var(--cf-radius-full);
+  font-family: var(--cf-font-mono);
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+}
+
+.cf-badge-emerald {
+  background-color: var(--cf-primary-subtle);
+  color: #79D1B9;
+  border: 1px solid var(--cf-primary-border);
+}
+
+.cf-badge-violet {
+  background-color: var(--cf-violet-subtle);
+  color: #CBA4FF;
+  border: 1px solid rgba(165, 91, 255, 0.35);
+}
+
+.cf-badge-muted {
+  background-color: var(--cf-surface-raised);
+  color: var(--cf-text-muted);
+  border: 1px solid var(--cf-border);
+}
+
+/* Screen Reader Only Utility */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+/* Reduced Motion Override */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

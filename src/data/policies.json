@@ -1,0 +1,122 @@
+[
+  {
+    "id": "ucb-course-enrollment",
+    "institution": "University of California, Berkeley",
+    "department": "Office of the University Registrar",
+    "documentTitle": "Enrollment: How to Enroll in Classes and Enrollment Periods",
+    "sourceUrl": "https://registrar.berkeley.edu/enrollment",
+    "lastChecked": "2026-10-23",
+    "topics": ["enrollment", "course registration", "phase 1", "phase 2", "calcentral"],
+    "keywords": [
+      "enroll",
+      "enrollment",
+      "register",
+      "registration",
+      "classes",
+      "courses",
+      "phase 1",
+      "phase 2",
+      "calcentral",
+      "schedule",
+      "appointment",
+      "unit limit",
+      "holds",
+      "prerequisites",
+      "academic guide"
+    ],
+    "sampleQuestions": [
+      "How do I enroll in classes for Phase 1 and Phase 2 at UC Berkeley?",
+      "What are the steps to register for courses in CalCentral?",
+      "What do I need to prepare before my enrollment appointment?"
+    ],
+    "excerpt": "Enrollment is the process whereby students officially register for courses at UC Berkeley. Enrollment ensures you secure a spot in your chosen courses for the semester, which is possible after you complete your general Registration and Payment to the university. The enrollment process has multiple steps before and during your enrollment periods, including tasks: Explore courses and degree options. Select courses and confirm you meet any academic prerequisites. Build your class schedule in CalCentral. Enroll during your Phase 1 and Phase 2 enrollment periods.",
+    "steps": [
+      {
+        "id": "ucb-enroll-step-1",
+        "text": "Explore courses and degree options via the Berkeley Academic Guide and verify required prerequisites.",
+        "hint": "Check the Class Schedule and Course Catalog to ensure all prerequisites are satisfied in your academic record."
+      },
+      {
+        "id": "ucb-enroll-step-2",
+        "text": "Resolve any administrative holds on your student account (e.g., unpaid fees or missing documentation).",
+        "hint": "Holds must be cleared in CalCentral before the system will allow class enrollment."
+      },
+      {
+        "id": "ucb-enroll-step-3",
+        "text": "Build your planned class schedule in CalCentral using Schedule of Classes and Schedule Planner.",
+        "hint": "Have alternate course choices ready in case primary classes or sections are full."
+      },
+      {
+        "id": "ucb-enroll-step-4",
+        "text": "Log into CalCentral at your designated Phase 1 appointment time and enroll up to your phase unit limit.",
+        "hint": "Continuing undergraduates are capped at 13.5 units in Phase 1 (including waitlisted units)."
+      },
+      {
+        "id": "ucb-enroll-step-5",
+        "text": "During your Phase 2 appointment or Adjustment Period, add remaining classes up to the maximum unit limit.",
+        "hint": "Phase 2 allows continuing undergraduates to enroll up to 17.5 units; students who missed Phase 1 must wait for Phase 2."
+      },
+      {
+        "id": "ucb-enroll-step-6",
+        "text": "Maintain your registration status by ensuring at least 20% of your semester fees are paid before instruction begins.",
+        "hint": "General Registration and Payment to the university is required to maintain enrolled course spots."
+      }
+    ]
+  },
+  {
+    "id": "ucb-enrollment-changes-drop",
+    "institution": "University of California, Berkeley",
+    "department": "Office of the University Registrar",
+    "documentTitle": "Enrollment Adjustments: Schedule Changes, Add, Drop, and Swaps",
+    "sourceUrl": "https://registrar.berkeley.edu/enrollment",
+    "lastChecked": "2026-10-23",
+    "topics": ["drop class", "swap class", "grading options", "late enrollment", "adjustment period"],
+    "keywords": [
+      "drop",
+      "drop class",
+      "dropping",
+      "swap",
+      "grading option",
+      "p/np",
+      "pass no pass",
+      "letter grade",
+      "late drop",
+      "adjustment period",
+      "withdraw class",
+      "change section"
+    ],
+    "sampleQuestions": [
+      "How do I drop or swap a course at UC Berkeley?",
+      "What is the procedure to change course grading options or drop during the adjustment period?",
+      "What happens if I need to drop a class after the enrollment deadline?"
+    ],
+    "excerpt": "Students have from the start of their enrollment appointment time until the end of that given phase to add, drop, or swap classes, change grading options, change discussion sections, and make variable unit updates. Please see deadlines available in the student Enrollment Calendar. During the Adjustment Period in August (fall semester) and January (spring semester), students may enroll up to their college’s maximum unit limit. If you are an undergraduate student and have not enrolled in classes by the end of the fourth Wednesday of instruction (11:59 p.m. PST), you must obtain approval from an advisor in your college or school in order to enroll late.",
+    "steps": [
+      {
+        "id": "ucb-drop-step-1",
+        "text": "Consult the Student Enrollment Calendar for official deadlines to add, drop, swap, or change grading options.",
+        "hint": "Deadlines differ for standard courses and Early Drop Deadline (EDD) courses."
+      },
+      {
+        "id": "ucb-drop-step-2",
+        "text": "Access CalCentral My Academics and open the class enrollment and schedule management interface.",
+        "hint": "Ensure self-service enrollment adjustment windows are currently open."
+      },
+      {
+        "id": "ucb-drop-step-3",
+        "text": "Select the target class to drop, swap with another open section/course, or update grading option.",
+        "hint": "Review the impact on minimum unit requirements for financial aid or visa status before confirming."
+      },
+      {
+        "id": "ucb-drop-step-4",
+        "text": "Confirm the transaction and verify that the updated schedule is reflected in CalCentral.",
+        "hint": "Take note of any change of registration fees applicable after early drop deadlines."
+      },
+      {
+        "id": "ucb-drop-step-5",
+        "text": "If past the fourth Wednesday deadline, obtain formal advisor approval from your college or school for late adjustments.",
+        "hint": "Late enrollment or retroactive drops require college dean approval and an advisor request form."
+      }
+    ]
+  }
+]
